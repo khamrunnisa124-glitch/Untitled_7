@@ -1,0 +1,17 @@
+report = f"""
+STUDENT PERFORMANCE REPORT
+
+Total Students: {len(df)}
+Average Marks: {df['Marks'].mean()}
+Highest Marks: {df['Marks'].max()}
+Lowest Marks: {df['Marks'].min()}
+"""
+
+print(report)
+
+with open("student_report.txt", "w") as file:
+    file.write(report)
+
+df.to_csv("student_analysis.csv", index=False)
+
+print("CSV and Report Generated Successfully!")
